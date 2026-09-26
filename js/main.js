@@ -36,8 +36,8 @@ const GALERIA = [
    --------------------------------------------------------- */
 const CAL_USUARIO = "infinito-barbearia";
 const SERVICOS_CAL = [
-  { nome: "Corte", preco: "R$ 55", slug: "corte" },
-  { nome: "Corte e Barba", preco: "R$ 100", slug: "corte-e-barba" },
+  { nome: "Corte", preco: "R$ 55", slug: "agenda-corte" },
+  { nome: "Corte e Barba", preco: "R$ 100", slug: "agendamento-corte-e-barba" },
 ];
 
 /* ========================================================= */
