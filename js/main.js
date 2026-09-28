@@ -321,8 +321,10 @@ document.getElementById("ano").textContent = new Date().getFullYear();
 
   fallbackLink.href = "https://cal.com/" + CAL_USUARIO + "/" + SERVICOS_CAL[0].slug;
 
-  // Só carrega o Cal.com quando a pessoa chega perto da seção (site mais rápido)
-  if ("IntersectionObserver" in window) {
+  // Só carrega o Cal.com depois que a página terminou de carregar e quando
+  // a pessoa chega perto da seção. Assim ele não atrasa o resto do site.
+  function observar() {
+    if (!("IntersectionObserver" in window)) return carregarCal();
     const io = new IntersectionObserver((entries) => {
       if (entries.some((e) => e.isIntersecting)) {
         io.disconnect();
@@ -330,7 +332,8 @@ document.getElementById("ano").textContent = new Date().getFullYear();
       }
     }, { rootMargin: "600px 0px" });
     io.observe(section);
-  } else {
-    carregarCal();
   }
+
+  if (document.readyState === "complete") observar();
+  else window.addEventListener("load", observar, { once: true });
 })();

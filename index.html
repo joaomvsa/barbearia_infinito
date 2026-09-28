@@ -25,9 +25,11 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Oswald:wght@500;600&display=swap">
-  <link rel="preload" as="image" href="img/espaco/interior.webp" fetchpriority="high">
-  <link rel="stylesheet" href="css/style.css">
+  <!-- Fontes carregadas sem bloquear a primeira pintura da página -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Oswald:wght@500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Oswald:wght@500;600&display=swap"></noscript>
+  <link rel="preload" as="image" href="img/espaco/interior.webp" imagesrcset="img/espaco/interior-thumb.webp 700w, img/espaco/interior.webp 960w" imagesizes="100vw" fetchpriority="high">
+  <link rel="stylesheet" href="css/style.css?v=2">
 
   <script type="application/ld+json">
   {
@@ -98,7 +100,7 @@
   <main id="conteudo">
     <!-- ===== 1. Início ===== -->
     <section class="hero" id="inicio" aria-labelledby="hero-titulo">
-      <img class="hero-bg" src="img/espaco/interior.webp" alt="" width="960" height="1280" fetchpriority="high">
+      <img class="hero-bg" src="img/espaco/interior.webp" srcset="img/espaco/interior-thumb.webp 700w, img/espaco/interior.webp 960w" sizes="100vw" alt="" width="960" height="1280" fetchpriority="high">
       <div class="container hero-content">
         <p class="hero-brand">INFINITO<span aria-hidden="true">∞</span> <span>barbearia</span></p>
         <h1 id="hero-titulo" class="hero-title">Não é só corte… <em>é identidade.</em></h1>
@@ -338,6 +340,6 @@
     <symbol id="i-google" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.5 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.9a5.05 5.05 0 0 1-2.19 3.31v2.77h3.54c2.07-1.91 3.25-4.72 3.25-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.54-2.77c-.98.66-2.24 1.06-3.74 1.06-2.87 0-5.3-1.94-6.17-4.54H2.18v2.86A11 11 0 0 0 12 23z"/><path fill="#FBBC05" d="M5.83 14.09a6.6 6.6 0 0 1 0-4.18V7.05H2.18a11 11 0 0 0 0 9.9l3.65-2.86z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15A10.6 10.6 0 0 0 12 1 11 11 0 0 0 2.18 7.05l3.65 2.86C6.7 7.32 9.13 5.38 12 5.38z"/></symbol>
   </svg>
 
-  <script src="js/main.js" defer></script>
+  <script src="js/main.js?v=2" defer></script>
 </body>
 </html>
