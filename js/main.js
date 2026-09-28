@@ -31,12 +31,13 @@ const GALERIA = [
 
    Cada item vira uma aba. "slug" é o final do link do evento
    no Cal.com. Ex.: cal.com/infinito-barbearia/corte → slug "corte".
-   Para criar uma aba nova (ex.: Corte e Sobrancelha), crie o
+   Para criar uma aba nova (ex.: Química), crie o
    evento no Cal.com e adicione uma linha aqui.
    --------------------------------------------------------- */
 const CAL_USUARIO = "infinito-barbearia";
 const SERVICOS_CAL = [
   { nome: "Corte", preco: "R$ 55", slug: "agenda-corte" },
+  { nome: "Corte e Sobrancelha", preco: "R$ 75", slug: "agendamento-de-corte-e-sobrancelha" },
   { nome: "Corte e Barba", preco: "R$ 100", slug: "agendamento-corte-e-barba" },
 ];
 
